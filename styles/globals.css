@@ -1,0 +1,88 @@
+:root {
+  @apply dark;
+}
+
+.dark {
+  /* --color-bg-primary: #2d3748;
+  --color-bg-secondary: #283141;
+  --color-bg-accent: #81e6d9;
+  --color-text-primary: #f7fafc;
+  --color-text-secondary: #e2e8f0;
+  --color-text-accent: #81e6d9; */
+  --color-bg-black: #151515;
+  --color-bg-primary: #252525;
+  --color-bg-secondary: #1e1e1e;
+  --color-bg-accent-purple: #5f85db;
+  --color-bg-accent-teal: #80ffdb;
+  --color-text-primary: #eeeeee;
+  --color-text-secondary: #e2e8f0;
+  --color-text-accent-purple: #6930c3;
+  --color-text-accent-teal: #80ffdb;
+  --color-text-accent-blue: #8da4ff;
+}
+
+.light {
+  --color-bg-primary: #ffffff;
+  --color-bg-secondary: #edf2f7;
+  --color-text-primary: #2d3748;
+  --color-text-secondary: #4a5568;
+  --color-text-accent: #2b6cb0;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-secondary;
+  }
+  ,
+  h2,
+  .font-times {
+    @apply font-heading;
+  }
+}
+
+.logo {
+  transform-origin: center center;
+  transition-duration: 300ms;
+  transition-property: transform, box-shadow, -webkit-transform;
+  width: 120px;
+}
+.logo,
+.logo:active,
+.logo:focus {
+  background: #151515;
+  font-weight: bold;
+  border-radius: 0.25rem;
+  border: none;
+  outline: none;
+}
+
+.logo:hover {
+  background-image: linear-gradient(
+    to right,
+    rgb(250, 82, 82),
+    rgb(250, 82, 82) 16.65%,
+    rgb(190, 75, 219) 16.65%,
+    rgb(190, 75, 219) 33.3%,
+    rgb(76, 110, 245) 33.3%,
+    rgb(76, 110, 245) 49.95%,
+    rgb(64, 192, 87) 49.95%,
+    rgb(64, 192, 87) 66.6%,
+    rgb(250, 176, 5) 66.6%,
+    rgb(250, 176, 5) 83.25%,
+    rgb(253, 126, 20) 83.25%,
+    rgb(253, 126, 20) 100%,
+    rgb(250, 82, 82) 100%
+  );
+  animation: 1s linear 0s infinite normal none running slidebg;
+  transform: scale(1.05) perspective(1px) translateY(-1px);
+}
+
+@keyframes slidebg {
+  100% {
+    background-position: 120px center;
+  }
+}
