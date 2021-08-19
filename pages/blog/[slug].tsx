@@ -18,7 +18,7 @@ const Post: React.FC<{ post: GET_ALL_POSTS_posts }> = ({ post }) => {
   return (
     <div className="md:container md:mx-auto my-5 mx-auto xl:w-8/12">
       <Head>
-        <title>{slug}</title>
+        <title>{title}</title>
       </Head>
       <h2 className="text-primary sm:text-5xl text-3xl underline py-5 mx-5 sm:mx-10 font-medium text-center flex-grow tracking-wider">
         {title}
