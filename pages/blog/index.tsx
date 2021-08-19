@@ -11,12 +11,13 @@ import { GetStaticProps } from "next";
 const blog = ({ posts }: { posts: GET_ALL_POSTS_posts[] }) => {
   const allPosts = posts.map((post) => {
     const { slug, category, title, description } = post;
+
     return (
       <div className="p-4 md:w-1/2 lg:w-1/3" key={slug}>
         <div className="h-full shadow-md rounded-lg overflow-hidden transition duration-300 ease-in-out transform hover:-translate-y-0.5 hover:scale-105 hover:shadow-lg">
           <img
             className="lg:h-48 md:h-36 w-full object-cover object-center"
-            src={`http://localhost:1337${post.thumbnail[0].url}`}
+            src={post.thumbnail[0].url}
             alt="blog"
           />
           <div className="p-6 h-full bg-primary">

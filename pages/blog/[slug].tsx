@@ -26,7 +26,7 @@ const Post: React.FC<{ post: GET_ALL_POSTS_posts }> = ({ post }) => {
       <div className="mx-5 sm:mt-5 sm:mx-10 flex justify-center">
         <img
           className="md:h-auto w-full object-cover object-center rounded-md"
-          src={`http://localhost:1337${thumbnail[0].url}`}
+          src={thumbnail[0].url}
           alt="blog"
         />
       </div>
