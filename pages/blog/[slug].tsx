@@ -40,12 +40,42 @@ const Post: React.FC<{ post: GET_ALL_POSTS_posts }> = ({ post }) => {
           components={{
             p: ({ children }) => {
               return (
-                <p className="text-primary text-base sm:text-xl">{children}</p>
+                <p className="text-primary text-base sm:text-xl mt-2">
+                  {children}
+                </p>
+              );
+            },
+            ul: ({ children }) => {
+              return (
+                <ul className="text-primary text-base sm:text-xl ml-8 list-disc">
+                  {children}
+                </ul>
+              );
+            },
+            ol: ({ children }) => {
+              return (
+                <ol className="text-primary text-base sm:text-xl ml-8 list-decimal">
+                  {children}
+                </ol>
+              );
+            },
+            li: ({ children }) => {
+              return (
+                <li className="text-primary text-base sm:text-xl">
+                  {children}
+                </li>
+              );
+            },
+            h1: ({ children }) => {
+              return (
+                <h1 className="text-primary text-xl sm:text-3xl my-5 underline">
+                  {children}
+                </h1>
               );
             },
             h2: ({ children }) => {
               return (
-                <h2 className="text-primary text-base sm:text-xl my-5">
+                <h2 className="text-primary text-2xl sm:text-3xl my-5 underline">
                   {children}
                 </h2>
               );
