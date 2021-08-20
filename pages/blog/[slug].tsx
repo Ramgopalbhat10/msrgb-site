@@ -26,11 +26,11 @@ const Post: React.FC<{ post: GET_ALL_POSTS_posts }> = ({ post }) => {
       <h2 className="text-primary sm:text-5xl text-3xl underline py-5 mx-5 sm:mx-10 font-medium text-center flex-grow tracking-wider">
         {title}
       </h2>
-      <div className="flex mx-10 py-3 border-b-2 border-gray-600 justify-between">
+      <div className="flex mx-5 sm:mx-10 py-3 border-b-2 border-gray-600 justify-between">
         <div className="flex">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="h-4 w-4 text-primary mr-1 mt-0.5"
+            className="h-4 w-4 text-primary mr-1 sm:mt-0.5"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -47,7 +47,7 @@ const Post: React.FC<{ post: GET_ALL_POSTS_posts }> = ({ post }) => {
         <div className="flex">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="h-4 w-4 text-primary mr-1 mt-0.5"
+            className="h-4 w-4 text-primary mr-1 sm:mt-0.5"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -62,7 +62,7 @@ const Post: React.FC<{ post: GET_ALL_POSTS_posts }> = ({ post }) => {
           <p className="text-primary text-xs sm:text-sm">5 min read</p>
         </div>
       </div>
-      <div className="mx-5 sm:mt-5 sm:mx-10 flex justify-center">
+      <div className="mx-5 mt-5 sm:mx-10 flex justify-center">
         <img
           className="md:h-auto w-full object-cover object-center rounded-md"
           src={thumbnail[0].url}
