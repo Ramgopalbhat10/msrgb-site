@@ -11,13 +11,16 @@
   },
   "dependencies": {
     "@apollo/client": "^3.4.8",
+    "@heroicons/react": "^1.0.4",
     "@types/react-syntax-highlighter": "^13.5.2",
     "graphql": "^15.5.1",
+    "moment": "^2.29.1",
     "next": "^11.1.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-markdown": "^7.0.0",
-    "react-syntax-highlighter": "^15.4.4"
+    "react-syntax-highlighter": "^15.4.4",
+    "rehype-attr": "^1.4.2"
   },
   "devDependencies": {
     "@types/graphql": "^14.5.0",

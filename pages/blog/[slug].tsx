@@ -4,6 +4,8 @@ import React from "react";
 import ReactMarkdown from "react-markdown";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { tomorrow as theme } from "react-syntax-highlighter/dist/cjs/styles/prism";
+import rehype_attr from "rehype-attr";
+import moment from "moment";
 
 import { useApollo } from "../../src/apollo";
 import {
@@ -13,7 +15,8 @@ import {
 import { getPostBySlug, getAllPosts_slug } from "../../src/queries/getPosts";
 
 const Post: React.FC<{ post: GET_ALL_POSTS_posts }> = ({ post }) => {
-  const { slug, title, description, content, thumbnail } = post;
+  const { slug, title, description, content, thumbnail, updated_at } = post;
+  const updatedAt = moment(updated_at).format("MMM Do YY");
 
   return (
     <div className="md:container md:mx-auto my-5 mx-auto xl:w-8/12">
@@ -23,6 +26,42 @@ const Post: React.FC<{ post: GET_ALL_POSTS_posts }> = ({ post }) => {
       <h2 className="text-primary sm:text-5xl text-3xl underline py-5 mx-5 sm:mx-10 font-medium text-center flex-grow tracking-wider">
         {title}
       </h2>
+      <div className="flex mx-10 py-3 border-b-2 border-gray-600 justify-between">
+        <div className="flex">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-4 w-4 text-primary mr-1 mt-0.5"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"
+            />
+          </svg>
+          <p className="text-primary text-xs sm:text-sm">{updatedAt}</p>
+        </div>
+        <div className="flex">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-4 w-4 text-primary mr-1 mt-0.5"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+            />
+          </svg>
+          <p className="text-primary text-xs sm:text-sm">5 min read</p>
+        </div>
+      </div>
       <div className="mx-5 sm:mt-5 sm:mx-10 flex justify-center">
         <img
           className="md:h-auto w-full object-cover object-center rounded-md"
@@ -37,6 +76,7 @@ const Post: React.FC<{ post: GET_ALL_POSTS_posts }> = ({ post }) => {
         <ReactMarkdown
           className=""
           children={content}
+          rehypePlugins={[rehype_attr]}
           components={{
             p: ({ children }) => {
               return (

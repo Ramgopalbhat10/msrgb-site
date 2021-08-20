@@ -31,6 +31,7 @@ export const getPostBySlug = gql`
       title
       description
       content
+      updated_at
       thumbnail {
         name
         url

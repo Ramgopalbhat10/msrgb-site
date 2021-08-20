@@ -21,6 +21,7 @@ export interface GET_ALL_POSTS_posts {
   content: string | null;
   slug: string | null;
   category: string | null;
+  updated_at: string | null;
   thumbnail: (GET_ALL_POSTS_posts_thumbnail | null)[] | null;
 }
 
